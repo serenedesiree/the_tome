@@ -8,5 +8,5 @@ road_to_reality = str(road_to_reality)
 road_to_reality = road_to_reality[:999999]
 language = 'en'
 audio = gtts.gTTS(road_to_reality, lang=language, slow=False)
-a = audio.save('road_to_reality.wav')
+audio.save('road_to_reality.wav')
 save = os.system('road_to_reality.wav')
