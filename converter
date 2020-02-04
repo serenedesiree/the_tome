@@ -1,0 +1,12 @@
+import gtts
+import os
+
+
+road_to_reality = open('road_to_reality.txt')
+road_to_reality = road_to_reality.read()
+road_to_reality = str(road_to_reality)
+road_to_reality = road_to_reality[:999999]
+language = 'en'
+audio = gtts.gTTS(road_to_reality, lang=language, slow=False)
+a = audio.save('road_to_reality.wav')
+save = os.system('road_to_reality.wav')
