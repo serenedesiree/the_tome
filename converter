@@ -1,12 +1,21 @@
 import gtts
 import os
 
+x = 0
+y = 1
 
-road_to_reality = open('road_to_reality.txt')
-road_to_reality = road_to_reality.read()
-road_to_reality = str(road_to_reality)
-road_to_reality = road_to_reality[:999999]
-language = 'en'
-audio = gtts.gTTS(road_to_reality, lang=language, slow=False)
-audio.save('road_to_reality.wav')
-save = os.system('road_to_reality.wav')
+while y != 28:
+    road_to_reality = open('path/to/book')
+    road_to_reality = road_to_reality.read()
+    road_to_reality = str(road_to_reality)
+    for words in road_to_reality:
+        if words == '.':
+            words = words + '<break strength="weak"/>' # creates 'breath' breaks
+# Text to speech doesn't seem to like processing too many characters at one time
+    road_to_reality = road_to_reality[(x * 100000):(y * 100000)]
+    language = 'en'
+    audio = gtts.gTTS(road_to_reality, lang=language, slow=False)
+    audio.save('save/book/here'+str(y)+'.wav')
+    os.system('save/book/here'+str(y)+'.wav')
+    x += 1
+    y += 1
